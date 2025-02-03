@@ -1,0 +1,138 @@
+/* Zoom-in animation for the main heading */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    animation: zoomIn 1.2s ease-in-out;
+}
+
+/* Fade-in and slide-up animation for the text below the heading */
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+p {
+    animation: fadeInUp 1.5s ease-in-out 0.5s;
+    opacity: 1;
+    display: block;
+}
+
+/* Zoom-in animation for the Buy NOW button */
+@keyframes zoomInButton {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-outline-info {
+    animation: zoomInButton 1.5s ease-in-out 1s;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 2;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.btn-outline-info.animated {
+    opacity: 1 !important;
+}
+
+.btn-outline-info:hover {
+    transform: scale(1.1);
+}
+
+/* Push footer to the bottom */
+footer {
+    position: relative;
+    top: 120px;
+    width: 100%;
+}
+
+/* Zoom in animation for card headings (h3) */
+@keyframes zoomInCardHeading {
+    0% {
+        transform: scale(0.7); /* Start slightly smaller */
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.card h3 {
+    padding-top: 2rem;
+    text-align: center;
+    animation: zoomInCardHeading 1s ease-in-out; /* Apply animation */
+    opacity: 0; /* Initially hidden for animation */
+    animation-fill-mode: forwards; /* Keep visible after animation */
+}
+
+.card-img {
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.description {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+    filter: blur(5px);
+}
+
+.card:hover .description {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+/* Any other styles you had before should go here.  */
